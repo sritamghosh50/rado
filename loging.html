@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LemonPie Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+     text-align: center;
+      max-width: 400px;
+      width: 150%;
+      border: 2px solid black;
+      height: 600px;
+      border-radius: 20px;
+      background: #f0dcdc;
+    }
+
+    .logo {
+      width: 190px;
+      height: 150px;
+      margin: 0 auto 20px;
+      margin-top: 20px;
+      margin-bottom: 0px;
+      
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #000;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .input-field {
+      width: 80%;
+      padding: 14px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 25px;
+      background-color: #f1f1f1;
+      font-size: 15px;
+      outline: none;
+      text-indent: 10px;
+      margin-top: 0px;
+    }
+
+    .input-group {
+      position: relative;
+    }
+
+    .input-group .eye-icon {
+      position: absolute;
+      right: 45px;
+      top: 40%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 16px;
+      color: #999;
+       transition: fill 0.2s ease;
+    }
+     .eye-icon:hover {
+        fill: #000;
+        }
+    .btn {
+      background-color: #FFD23F;
+      border: none;
+      border-radius: 25px;
+      padding: 14px;
+      width: 88%;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .btn:active {
+      background-color: #fbbf24;
+      transform: scale(0.98);
+    }
+
+    .forgot {
+      font-size: 14px;
+      color: #fbbf24;
+      margin-top: 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .register {
+      margin-top: 75px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .register a {
+      color: #FFD23F;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+.rado-text {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 28px;
+  color: #3b2415; /* Deep brown */
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 0 #00000010;
+}
+
+
+    /* Responsive for smaller phones */
+    @media (max-width: 480px) {
+      .title {
+        font-size: 20px;
+      }
+      .subtitle {
+        font-size: 13px;
+      }
+      .btn {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="logo" src="./image/map.png" alt="Logo" />
+    <div class="title">Welcome to <b class="rado-text">rado</b></div>
+    <div class="subtitle" style="color: #000;">Keep your data safe</div>
+    
+    <input type="email" class="input-field" placeholder="Email" value="" />
+
+    <div class="input-group">
+      <input type="password" class="input-field" placeholder="Password" id="passwordField" />
+      <svg class="eye-icon" id="togglePassword" width="20" height="20" viewBox="0 0 24 24" fill="none">&#128065;
+        <path d="M12 5C7 5 2.7 9.11 2 12c.7 2.89 5 7 10 7s9.3-4.11 10-7c-.7-2.89-5-7-10-7zM12 17c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8.2A3.2 3.2 0 1 0 12 15a3.2 3.2 0 0 0 0-6.4z" fill="#999"/>
+      </svg> <!-- eye emoji as icon -->
+    </div>
+
+    <button class="btn">LOGIN</button>
+
+    <a href="#" class="forgot"><b>Forgot password?</b></a>
+
+    <div class="register" style="color: #000;">
+      Don't have an account? <a href="#">Register!</a>
+    </div>
+  </div>
+ <script>
+  const toggle = document.getElementById('togglePassword');
+  const password = document.getElementById('passwordField');
+
+  toggle.addEventListener('click', () => {
+    password.type = password.type === 'password' ? 'text' : 'password';
+  });
+</script>
+</body>
+</html>

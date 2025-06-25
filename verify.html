@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Verification</title>
+  <style>
+    .frame {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: white;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      
+    }
+
+    .container {
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      border: 2px solid black;
+      height: 600px;
+      border-radius: 20px;
+      background: #f0dcdc;
+    }
+
+    .illustration {
+      width: 180%;
+      max-width: 450px;
+      margin-bottom: -10px;
+      margin-top: 40px;
+      margin-left: -35px;
+    }
+
+    .text {
+      margin-bottom: 30px;
+      font-size: 16px;
+      color: #777;
+    }
+
+    .btn {
+      background-color: #FFD23F;
+      color: #000;
+      font-weight: bold;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      max-width: 250px;
+      margin: 0 auto 20px;
+      display: block;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+            .btn:active {
+        background-color: #fbbf24; /* Darker yellow or any color you want */
+        transform: scale(0.98); /* Optional: slight press-down effect */
+        }
+     .btn a {
+  text-decoration: none;   /* remove underline */
+  color: inherit;          /* inherit button text color */
+  display: block;          /* makes entire area clickable */
+  width: 100%;
+  height: 100%;
+}
+
+    .question {
+      font-size: 14px;
+      color: #333;
+      margin-top: 160px;
+      margin-left: 10px;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+    .question a {
+      color: #FFD23F;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Media Query for smaller phones */
+    @media (max-width: 480px) {
+      .container {
+        padding: 10px;
+      }
+
+      .text {
+        font-size: 14px;
+      }
+
+      .btn {
+        padding: 12px 20px;
+        font-size: 15px;
+      }
+
+      .question {
+        font-size: 13px;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="container">
+    <img class="illustration" style="color: #FFD23F;" src="./image/logo.png" alt="Verify Illustration" />
+    <div class="text" style="color: black;">Please use the link below to verify your <br> email and start your journey</div>
+    <button class="btn"><a href="loging.html">VERIFY EMAIL</a></button>
+    <div class="question" style="color: black;">Do you have any Question? <br><a href="mailto:contact@mail.com">contact@mail.com</a></div>
+  </div>
+  </div>
+</body>
+</html>

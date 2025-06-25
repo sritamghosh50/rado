@@ -97,9 +97,13 @@
         padding: 12px 20px;
         font-size: 15px;
       }
-      .illustration {
-    width: 100%;
-    margin-left: 0;
+     .illustration {
+    width: 100%;           /* fits inside container */
+    max-width: 100%;       /* prevent stretching */
+    height: auto;          /* keeps correct image ratio */
+    margin-left: 0;        /* reset left offset */
+    margin-top: 20px;      /* optional spacing tweak */
+    margin-bottom: 10px;
   }
 
       .question {

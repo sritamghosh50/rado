@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vehicle Job Post</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      padding: 20px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 10px;
+  margin: 0;
+}
 
-    .container {
+.container {
   background: white;
   width: 100%;
   max-width: 500px;
-  margin: auto;
+  margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -23,61 +24,49 @@
   box-sizing: border-box;
 }
 
+h1, h2, h3 {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 22px;
+}
 
-    h2, h3 {
-      text-align: center;
-    }
+label {
+  margin-top: 10px;
+  display: block;
+  color: #555;
+  font-size: 15px;
+}
 
-    label {
-      margin-top: 10px;
-      display: block;
-      color: #555;
-    }
+select, input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
 
-    select, input {
-      width: 95%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      
-    }
+.form-section {
+  display: none;
+  margin-top: 20px;
+}
 
-    .form-section {
-      display: none;
-      margin-top: 20px;
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #b8d5f5;
-      display: block;
-      margin: 10px auto;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background: #007BFF;
-      color: white;
-      border: none;
-      margin-top: 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #0056b3;
-    }
-    .profile-wrapper {
+.profile-wrapper {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   margin: 10px auto;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #b8d5f5;
+  display: block;
+  cursor: pointer;
 }
 
 .upload-label {
@@ -87,8 +76,8 @@
   background: #b8d5f5;
   color: white;
   border-radius: 50%;
-  padding: 6px 8px;
-  font-size: 16px;
+  padding: 4px 6px;
+  font-size: 14px;
   cursor: pointer;
   border: 2px solid white;
 }
@@ -96,28 +85,40 @@
 .upload-label:hover {
   background: #0056b3;
 }
-    .hidden {
-      display: none;
-    }
-    .profile-wrapper img {
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
 }
-@media (max-width: 600px) {
+
+button:hover {
+  background: #0056b3;
+}
+
+/* 🔧 Mobile responsiveness */
+@media (max-width: 480px) {
   .container {
     padding: 15px;
     border-radius: 8px;
+    margin: 10px;
     box-shadow: none;
-    margin: 0 10px;
   }
 
   .profile-wrapper {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
 
   .profile-pic {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
 
   h1, h2 {
@@ -158,7 +159,7 @@
   <h1 style="text-align: center;">Personal Information</h1>
   <div class="profile-wrapper">
   <img src="https://via.placeholder.com/120" id="bike-preview" class="profile-pic" onclick="document.getElementById('bike-user-photo').click()" />
-  <p style="margin-top: -10px; text-align: center;">Profile Photo</p>
+  <p style="margin-top: 0px; text-align: center;">Profile Photo</p>
   
   <!-- Hidden File Input -->
   <input type="file" id="bike-user-photo" onchange="previewImage(event, 'bike-preview')" accept="image/*" style="display: none;" />
@@ -211,7 +212,7 @@
   <h1 style="text-align: center;">Personal Information</h1>
   <div class="profile-wrapper">
   <img src="https://via.placeholder.com/120" id="car-preview" class="profile-pic" onclick="document.getElementById('car-user-photo').click()" />
-  <p style="margin-top: -10px; text-align: center;">Profile Photo</p>
+  <p style="margin-top: 0px; text-align: center;">Profile Photo</p>
   <input type="file" id="car-user-photo" onchange="previewImage(event, 'car-preview')" accept="image/*" style="display: none;" />
   <label class="upload-label" for="car-user-photo">📷</label>
 </div>
@@ -260,7 +261,7 @@
   <h1 style="text-align: center;">Personal Information</h1>
   <div class="profile-wrapper">
   <img src="https://via.placeholder.com/120" id="auto-preview" class="profile-pic" onclick="document.getElementById('auto-user-photo').click()" />
-  <p style="margin-top: -10px; text-align: center;">Profile Photo</p>
+  <p style="margin-top: 0px; text-align: center;">Profile Photo</p>
   <input type="file" id="auto-user-photo" onchange="previewImage(event, 'auto-preview')" accept="image/*" style="display: none;" />
   <label class="upload-label" for="auto-user-photo">📷</label>
 </div>
@@ -309,7 +310,7 @@
   <h1 style="text-align: center;">Personal Information</h1>
  <div class="profile-wrapper">
   <img src="https://via.placeholder.com/120" id="bus-preview" class="profile-pic" onclick="document.getElementById('bus-user-photo').click()" />
-  <p style="margin-top: -10px; text-align: center;">Profile Photo</p>
+  <p style="margin-top: 0px; text-align: center;">Profile Photo</p>
   <input type="file" id="bus-user-photo" onchange="previewImage(event, 'bus-preview')" accept="image/*" style="display: none;" />
   <label class="upload-label" for="bus-user-photo">📷</label>
 </div>

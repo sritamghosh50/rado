@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vehicle Job Post</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: #f0dcdc;
+    }
+
+    h2, h3 {
+      text-align: center;
+    }
+
+    label {
+      margin-top: 10px;
+      display: block;
+      color: #555;
+    }
+
+    select, input {
+      width: 95%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      
+    }
+
+    .form-section {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #b8d5f5;
+      display: block;
+      margin: 10px auto;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+    .profile-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+}
+
+.upload-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #b8d5f5;
+  color: white;
+  border-radius: 50%;
+  padding: 6px 8px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.upload-label:hover {
+  background: #0056b3;
+}
+    .hidden {
+      display: none;
+    }
+    .profile-wrapper img {
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  h1, h2, h3 {
+    font-size: 20px;
+  }
+
+  select, input, button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .profile-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .upload-label {
+    font-size: 14px;
+    padding: 5px 7px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+  </style>
+</head>
+<body>
+
+<div class="container">
+ 
+
+  <!-- Vehicle Selector -->
+  <div id="vehicle-selector">
+     <h2>Select Vehicle Type</h2>
+    <label for="vehicle-type">Choose a vehicle:</label>
+    <select id="vehicle-type" onchange="showFormAndHideSelect()">
+      <option value="">-- Select Vehicle Type --</option>
+      <option value="bike">Bike</option>
+      <option value="car">Car</option>
+      <option value="auto">Auto</option>
+      <option value="bus">Bus</option>
+    </select>
+  </div>
+
+  <!-- Bike Form -->
+  <div class="form-section" id="bike-form">
+  <h1 style="text-align: center;">Personal Information</h1>
+  <div class="profile-wrapper">
+  <img src="https://via.placeholder.com/120" id="bike-preview" class="profile-pic" onclick="document.getElementById('bike-user-photo').click()" />
+  <p style="margin-top: -10px; text-align: center;">Profile Photo</p>
+  
+  <!-- Hidden File Input -->
+  <input type="file" id="bike-user-photo" onchange="previewImage(event, 'bike-preview')" accept="image/*" style="display: none;" />
+  
+  <!-- Icon label (optional) -->
+  <label class="upload-label" for="bike-user-photo">📷</label>
+</div>
+
+    <label>Your Name:</label>
+    <input type="text" required>
+
+    <label>Mobile Number:</label>
+    <input type="text" required>
+
+    <label>Email:</label>
+    <input type="text" required>
+
+    <label>Bike Name:</label>
+    <input type="text" required>
+
+    <label>Bike Number:</label>
+    <input type="text" required>
+
+    <label>Date:</label>
+    <input type="text" required>
+
+    <label>Time:</label>
+    <input type="text" required>
+
+    <label>Location From:</label>
+    <input type="text" required>
+
+    <label>Location To:</label>
+    <input type="text" required>
+
+    <label>Uplode Bike Photo: (Atleast 4pic)</label>
+    <input type="file" required>
+
+    <label>Aadhaar Number:</label>
+    <input type="text" required>
+
+     <label>Upload Aadhaar Card photo:</label>
+    <input type="file" required>
+
+    <button>Submit Details</button>
+  </div>
+
+  <!-- Car Form -->
+  <div class="form-section" id="car-form">
+  <h1 style="text-align: center;">Personal Information</h1>
+  <div class="profile-wrapper">
+  <img src="https://via.placeholder.com/120" id="car-preview" class="profile-pic" onclick="document.getElementById('car-user-photo').click()" />
+  <p style="margin-top: -10px; text-align: center;">Profile Photo</p>
+  <input type="file" id="car-user-photo" onchange="previewImage(event, 'car-preview')" accept="image/*" style="display: none;" />
+  <label class="upload-label" for="car-user-photo">📷</label>
+</div>
+
+     <label>Your Name:</label>
+    <input type="text" required>
+
+    <label>Mobile Number:</label>
+    <input type="text" required>
+
+    <label>Email:</label>
+    <input type="text" required>
+
+    <label>Car Name:</label>
+    <input type="text" required>
+
+    <label>Car Number:</label>
+    <input type="text" required>
+
+     <label>Date:</label>
+    <input type="text" required>
+
+    <label>Time:</label>
+    <input type="text" required>
+
+    <label>Location From:</label>
+    <input type="text" required>
+
+    <label>Location To:</label>
+    <input type="text" required>
+
+    <label>Uplode Bike Photo: (Atleast 4pic both inside and outside)</label>
+    <input type="file" required>
+
+    <label>Aadhaar Number:</label>
+    <input type="text" required>
+
+     <label>Upload Aadhaar Card photo:</label>
+    <input type="file" required>
+
+    <button>Submit Details</button>
+  </div>
+
+  <!-- Auto Form -->
+  <div class="form-section" id="auto-form">
+  <h1 style="text-align: center;">Personal Information</h1>
+  <div class="profile-wrapper">
+  <img src="https://via.placeholder.com/120" id="auto-preview" class="profile-pic" onclick="document.getElementById('auto-user-photo').click()" />
+  <p style="margin-top: -10px; text-align: center;">Profile Photo</p>
+  <input type="file" id="auto-user-photo" onchange="previewImage(event, 'auto-preview')" accept="image/*" style="display: none;" />
+  <label class="upload-label" for="auto-user-photo">📷</label>
+</div>
+
+     <label>Your Name:</label>
+    <input type="text" required>
+
+    <label>Mobile Number:</label>
+    <input type="text" required>
+
+    <label>Email:</label>
+    <input type="text" required>
+
+    <label>Auto Name:</label>
+    <input type="text" required>
+
+    <label>Auto Number:</label>
+    <input type="text" required>
+
+     <label>Date:</label>
+    <input type="text" required>
+
+    <label>Time:</label>
+    <input type="text" required>
+
+    <label>Location From:</label>
+    <input type="text" required>
+
+    <label>Location To:</label>
+    <input type="text" required>
+
+    <label>Uplode Bike Photo: (Atleast 4pic both inside and outside)</label>
+    <input type="file" required>
+
+    <label>Aadhaar Number:</label>
+    <input type="text" required>
+
+     <label>Upload Aadhaar Card photo:</label>
+    <input type="file" required>
+
+    <button>Submit Details</button>
+  </div>
+
+  <!-- Bus Form -->
+  <div class="form-section" id="bus-form">
+  <h1 style="text-align: center;">Personal Information</h1>
+ <div class="profile-wrapper">
+  <img src="https://via.placeholder.com/120" id="bus-preview" class="profile-pic" onclick="document.getElementById('bus-user-photo').click()" />
+  <p style="margin-top: -10px; text-align: center;">Profile Photo</p>
+  <input type="file" id="bus-user-photo" onchange="previewImage(event, 'bus-preview')" accept="image/*" style="display: none;" />
+  <label class="upload-label" for="bus-user-photo">📷</label>
+</div>
+
+     <label>Your Name:</label>
+    <input type="text" required>
+
+    <label>Mobile Number:</label>
+    <input type="text" required>
+
+    <label>Email:</label>
+    <input type="text" required>
+
+    <label>Bus Name:</label>
+    <input type="text" required>
+
+    <label>Bus Number:</label>
+    <input type="text" required>
+
+    <label>Date:</label>
+    <input type="text" required>
+
+    <label>Time:</label>
+    <input type="text" required>
+
+    <label>Location From:</label>
+    <input type="text" required>
+
+    <label>Location To:</label>
+    <input type="text" required>
+
+    <label>Uplode Bike Photo: (Atleast 4pic both inside and outside)</label>
+    <input type="file" required>
+
+    <label>Aadhaar Number:</label>
+    <input type="text" required>
+
+     <label>Upload Aadhaar Card photo:</label>
+    <input type="file" required>
+
+    <button>Submit Details</button>
+  </div>
+</div>
+
+<script>
+  function showFormAndHideSelect() {
+    const type = document.getElementById("vehicle-type").value;
+    const forms = document.querySelectorAll(".form-section");
+    forms.forEach(f => f.style.display = "none");
+
+    if (type) {
+      document.getElementById(type + "-form").style.display = "block";
+      document.getElementById("vehicle-selector").style.display = "none"; // Hide selector
+    }
+  }
+
+ function previewDocument(event, previewId) {
+    const file = event.target.files[0];
+    if (file) {
+      const img = document.getElementById(previewId);
+      img.src = URL.createObjectURL(file);
+    }
+  }
+  function previewImage(event, previewId) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById(previewId).src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+</script>
+
+</body>
+</html>
